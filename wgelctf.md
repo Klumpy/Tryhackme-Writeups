@@ -1,6 +1,6 @@
 ## Wgel CTF - Try Hack Me
 
-## 1. Overview
+## 1. Oversikt
 This box was rated as *easy* on tryhackme.com and has only two tasks. Get the user.txt flag and the root.txt flag. At first we use **NMAP** and **Gobuster** to scan the target machine. Further, we found an **ida_rsa private key** that we used in order to log into one of the users through ssh. Then we transfered over **linpeas** and made a scan on the machine from the inside. We figured out that the user could run `wget` as root. So in order to priv esc, we changed the whole `/etc/passwd` file, changing the root password, so that we could simply log into root with our newly created password.  
 
 Link to the machine: https://tryhackme.com/room/wgelctf
