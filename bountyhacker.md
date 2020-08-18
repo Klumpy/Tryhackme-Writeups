@@ -1,15 +1,21 @@
 ## Bounty Hacker - Try Hack Me
 
+## 1. Overview
 En maskin som var rata *easy* på tryhackme.com
-Omhandlet å ta seg inn på en anonym ***FTP*** server for å hente ut noen filer. Videre ble det brukt ***Hydra*** for å bruteforce oss inn på ***ssh***. Til slutt fant man ut at brukeren hadde rettigheter til å ***kjøre en kommando som root***, og man kunne spawne et root shell.
+Omhandlet å ta seg inn på en anonym **FTP** server for å hente ut noen filer. Videre ble det brukt **Hydra** for å bruteforce oss inn på **ssh**. Til slutt fant man ut at brukeren hadde rettigheter til å **kjøre en kommando som root**, og man kunne spawne et root shell.
 
 Link til maskinen: https://tryhackme.com/room/cowboyhacker  
+
+
+
+## 2. Oppgaver
+### 2.1 User.txt
 
 ```sh
 export IP=10.10.13.45
 ```
-Kjører først en **NMAP** scan:
 
+Kjører først en **NMAP** scan:
 ```sh
 nmap -sV -sC -oA nmap/ $IP
 ```
@@ -19,11 +25,8 @@ NMAP skannen viste til 3 åpne porter på maskinen:
 - ***22 ssh***
 - ***80 http***
 
-
-# 1. OPPGAVER
-# 1.1. USER.TXT
 FTP serveren er første hintet.
-Serveren har anonym pålogging, så jeg kom inn ved å skrive
+Serveren har anonym pålogging, så jeg kom inn ved å skrive:
 ```sh
 ftp $IP
 ```
@@ -52,7 +55,7 @@ På desktopen lå det en user.txt fil som inneholdt flagget.
 
 
 
-# 1.2. ROOT.TXT
+### 2.2 root.txt
 Brukte ssh til å kopiere over et privesc script. Bruker Linpeas i dette tilfelle:
 ```sh
 scp ./linpeas.sh lin@$IP:/home/Documents/
@@ -77,3 +80,4 @@ Deretter bruker jeg shellet til å finne `root.txt` fila:
 ```sh
 find / -name "root.txt" 2>/dev/null
 ```
+
