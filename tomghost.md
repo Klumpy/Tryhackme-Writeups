@@ -3,29 +3,13 @@ Easy box from tryhackme
 
 `export IP=10.10.170.225`
 
-## 1. Overveiw
-**NMAP**
-**AJP**
-**PGP**
-**GPG**
-Link to the machine: https://tryhackme.com/room/tomghost
+### Overveiw
+- **NMAP**
+- **AJP**
+- **PGP**
+- **GPG**
 
-Start with a nmap scan which returns:
-```sh
-PORT     STATE SERVICE
-22/tcp   open  ssh
-| ssh-hostkey: 
-|   2048 f3:c8:9f:0b:6a:c5:fe:95:54:0b:e9:e3:ba:93:db:7c (RSA)
-|   256 dd:1a:09:f5:99:63:a3:43:0d:2d:90:d8:e3:e1:1f:b9 (ECDSA)
-|_  256 48:d1:30:1b:38:6c:c6:53:ea:30:81:80:5d:0c:f1:05 (ED25519)
-53/tcp   open  domain
-8009/tcp open  ajp13
-| ajp-methods: 
-|_  Supported methods: GET HEAD POST OPTIONS
-8080/tcp open  http-proxy
-|_http-favicon: Apache Tomcat
-|_http-title: Apache Tomcat/9.0.30
-```
+Link to the machine: https://tryhackme.com/room/tomghost
 
 
 
