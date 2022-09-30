@@ -4,12 +4,10 @@ Easy box from tryhackme
 `export IP=10.10.170.225`
 
 ## 1. Overveiw
-
 **NMAP**
-**Gobuster**
-****
-****
-****
+**AJP**
+**PGP**
+**GPG**
 Link to the machine: https://tryhackme.com/room/tomghost
 
 Start with a nmap scan which returns:
